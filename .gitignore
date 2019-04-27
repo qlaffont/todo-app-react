@@ -88,3 +88,9 @@ typings/
 
 # Local Folder Script
 local
+
+# Remove Sass Cache
+.sass-cache
+
+# Remove CSS Folder
+css

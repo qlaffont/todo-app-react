@@ -4,20 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start -p $PORT",
-    "export": "next export",
+    "dev": "npx next",
+    "build": "npx next build",
+    "start": "npx next start -p $PORT",
+    "export": "npx next export",
     "lint": "npx eslint ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.1",
+    "@zeit/next-css": "^1.0.1",
     "axios": "^0.18.0",
+    "bulma": "^0.7.4",
     "dotenv": "^7.0.0",
     "dotenv-webpack": "^1.7.0",
     "next": "^8.1.0",
+    "next-i18next": "^0.37.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-markdown": "^4.0.8"

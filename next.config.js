@@ -1,8 +1,9 @@
 require("dotenv").config();
 
 const Dotenv = require("dotenv-webpack");
+const withCSS = require("@zeit/next-css");
 
-module.exports = {
+module.exports = withCSS({
   webpack: config => {
     const newConfig = config;
     newConfig.plugins = config.plugins || [];
@@ -22,5 +23,8 @@ module.exports = {
     return {
       "/": { page: "/" }
     };
+  },
+  cssLoaderOptions: {
+    url: false
   }
-};
+});
