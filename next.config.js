@@ -1,14 +1,14 @@
 require("dotenv").config();
 
-const path = require("path");
 const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   webpack: config => {
-    config.plugins = config.plugins || [];
+    const newConfig = config;
+    newConfig.plugins = config.plugins || [];
 
-    config.plugins = [
-      ...config.plugins,
+    newConfig.plugins = [
+      ...newConfig.plugins,
 
       // Read the .env file
       new Dotenv({
@@ -16,9 +16,9 @@ module.exports = {
       })
     ];
 
-    return config;
+    return newConfig;
   },
-  exportPathMap: function() {
+  exportPathMap() {
     return {
       "/": { page: "/" }
     };
