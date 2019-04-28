@@ -1,22 +1,25 @@
 import React from "react";
-import Head from "next/head";
+import PropTypes from "prop-types";
+
 import Footer from "./Footer";
+import { withNamespaces } from "../../i18n";
+
 import "../../assets/css/main.css";
 
-const Header = props => {
+const Layout = props => {
+  const { children } = props;
   return (
     <div>
-      <Head>
-        <title>Welcome to totask !</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
-
       <div>
-        <div>{props.children}</div>
+        <div>{children}</div>
         <Footer />
       </div>
     </div>
   );
 };
 
-export default Header;
+Layout.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired
+};
+
+export default withNamespaces("common")(Layout);

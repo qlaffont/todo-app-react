@@ -1,1 +1,34 @@
-{}
+{
+  "ServerError": "Bug de matrice :/",
+  "UserRedirected": "Vous serez redirigé dans 3s ...",
+  "defaultNameTodo": "Ma Todo",
+  "Index": {
+    "titleHtml": "Bienvenue sur Totask - Crée ta todo gratuitement !",
+    "title": "Bienvenue sur Totask !",
+    "description": "La meilleure application de todo gratuite !",
+    "createTodo": "Créé une todo"
+  },
+  "Actions": {
+    "addTask": "Ajoute une tâche",
+    "editTask": "Edite une tâche",
+    "editTodo": "Edite la Todo",
+    "deleteTodo": "Supprime la Todo",
+    "deleteTodoConfirmation": "Es-tu sûre de supprimer cette todo ?"
+  },
+  "Task": {
+    "Select": {
+      "noPriority": "Pas de priorité",
+      "lowPriority": "Priorité basse",
+      "middlePriority": "Priorité moyenne",
+      "highPriority": "Priorité haute"
+    },
+    "created": "Créé à"
+  },
+  "Input": {
+    "title": "Titre",
+    "message": "Message",
+    "markdownHelp": "Besoin d'aide en Markdown ?",
+    "yesHelp": "Oui, je veux de l'aide",
+    "send": "Envoyer"
+  }
+}

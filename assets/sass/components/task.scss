@@ -1,0 +1,108 @@
+.todos {
+  min-width: 50vw;
+
+  .task.completed {
+    .Collapsible__trigger {
+      text-decoration: line-through;
+
+      &:before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f14a";
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        display: block;
+        transition: transform 300ms;
+      }
+    }
+  }
+
+  .task.priority-1 {
+    .Collapsible__trigger {
+      background-color: #78e08f !important;
+    }
+  }
+  .task.priority-2 {
+    .Collapsible__trigger {
+      background-color: #f6b93b !important;
+    }
+  }
+  .task.priority-3 {
+    .Collapsible__trigger {
+      background-color: #e55039 !important;
+    }
+  }
+
+  .tools {
+    .tools-item {
+      display: inline;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+
+  // The main container element
+  .Collapsible {
+    background-color: white;
+  }
+
+  //The content within the collaspable area
+  .Collapsible__contentInner {
+    padding: 10px;
+    border: 1px solid lightgrey;
+
+    p {
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 20px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  //The link which when clicked opens the collapsable area
+  .Collapsible__trigger {
+    display: block;
+    font-weight: 400;
+    text-decoration: none;
+    color: grey;
+    position: relative;
+    padding: 10px;
+    background: grey;
+    color: white;
+    padding-left: 30px;
+
+    &:after {
+      content: ">";
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      display: block;
+      transition: transform 300ms;
+    }
+
+    &:before {
+      font-family: "Font Awesome 5 Free";
+      content: "\f0c8";
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      display: block;
+      transition: transform 300ms;
+    }
+
+    &.is-open {
+      &:after {
+        content: ">";
+        transform: rotateZ(90deg);
+      }
+    }
+
+    &.is-disabled {
+      opacity: 0.5;
+      background-color: grey;
+    }
+  }
+}

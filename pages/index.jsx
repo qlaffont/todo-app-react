@@ -10,35 +10,38 @@ import { Router, withNamespaces } from "../i18n";
 
 const todoService = new TodoService();
 
-const createTodo = alert => {
-  todoService
-    .createNewTodo({
-      title: "todo Test"
-    })
-    .then(res => {
-      alert.success("You will be redirected asap ! ");
-      setTimeout(() => Router.push(`/todos/${res.data.id}`), 3000);
-    })
-    .catch(res => {
-      alert.error("Bug on our system, can you retry please ?");
-    });
-};
-
-const Index = props => {
+const Index = ({ t }) => {
   const alert = useAlert();
+
+  const createTodo = () => {
+    todoService
+      .createNewTodo({
+        title: t("defaultNameTodo")
+      })
+      .then(res => {
+        alert.success(t("UserRedirected"));
+        setTimeout(() => Router.push(`/todos/${res.data.id}`), 3000);
+      })
+      .catch(() => {
+        alert.error(t("ServerError"));
+      });
+  };
+
   return (
     <Layout>
       <Head>
-        <title>Home - Totask</title>
+        <title>{t("Index.titleHtml")}</title>
       </Head>
       <div className="centerall">
         <div className="home has-text-centered">
-          <h1 className="title is-3">Welcome to Totask ! </h1>
-          <p>The best todo web app.</p>
+          <h1 className="title is-3">{t("Index.title")}</h1>
+          <p>{t("Index.description")}</p>
           <br />
 
-          <button className="button" type="submit" onClick={() => createTodo(alert)}>
-            Create a todo
+          <button className="button is-info" type="submit" onClick={() => createTodo()}>
+            <i className="fas fa-tasks" />
+            &nbsp;
+            {t("Index.createTodo")}
           </button>
         </div>
       </div>

@@ -2,20 +2,26 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { withNamespaces } from "../../i18n";
 
-const TodoForm = ({ data, t, onSubmit }) => {
+const TaskForm = ({ data, t, onSubmit }) => {
   let defaultTitle = "";
+  let defaultMessage = "";
 
   if (data) {
     if (data.title) {
       defaultTitle = data.title;
     }
+
+    if (data.message) {
+      defaultMessage = data.message;
+    }
   }
 
   const [title, setTitle] = useState(defaultTitle);
+  const [message, setMessage] = useState(defaultMessage);
 
   const submitForm = evt => {
     evt.preventDefault();
-    onSubmit({ title });
+    onSubmit({ title, message });
   };
 
   return (
@@ -37,6 +43,31 @@ const TodoForm = ({ data, t, onSubmit }) => {
             />
           </div>
         </div>
+        <div className="field">
+          <label className="label" htmlFor="message">
+            {t("Input.message")}
+          </label>
+          <div className="control">
+            <textarea
+              className="input"
+              type="text"
+              id="message"
+              minLength="5"
+              value={message}
+              onChange={evt => setMessage(evt.target.value)}
+            />
+          </div>
+          <i>
+            {t("Input.markdownHelp")}
+            <a
+              href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t("Input.yesHelp")}
+            </a>
+          </i>
+        </div>
         <div className="has-text-centered">
           <button type="submit" className="button is-success">
             {t("Input.send")}
@@ -54,24 +85,26 @@ const TodoForm = ({ data, t, onSubmit }) => {
   );
 };
 
-TodoForm.propTypes = {
+TaskForm.propTypes = {
   t: PropTypes.func.isRequired,
   data: PropTypes.shape({
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
+    message: PropTypes.string
   }),
   onSubmit: PropTypes.func.isRequired
 };
 
-TodoForm.defaultProps = {
+TaskForm.defaultProps = {
   data: {
-    title: ""
+    title: "",
+    message: ""
   }
 };
 
-TodoForm.getInitialProps = () => {
+TaskForm.getInitialProps = () => {
   return {
     namespacesRequired: ["common"]
   };
 };
 
-export default withNamespaces("common")(TodoForm);
+export default withNamespaces("common")(TaskForm);

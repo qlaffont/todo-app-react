@@ -13,12 +13,9 @@ class taskService extends apiService {
   }
 
   editTask(data) {
-    return this.post(`/tasks/${data.id}`, {
-      title: data.title,
-      message: data.message,
-      completed: data.completed,
-      priority: data.priority
-    });
+    const finalData = { ...data };
+    delete finalData.id;
+    return this.post(`/tasks/${data.id}`, finalData);
   }
 
   deleteTask(data) {

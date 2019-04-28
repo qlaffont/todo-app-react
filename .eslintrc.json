@@ -3,6 +3,30 @@
   "plugins": ["prettier", "react"],
   "rules": {
     "prettier/prettier": ["error"],
-    "react/jsx-uses-vars": "error"
+    "react/jsx-uses-vars": "error",
+    "jsx-a11y/label-has-for": [
+      2,
+      {
+        "components": ["Label"],
+        "required": {
+          "every": ["id"]
+        },
+        "allowChildren": false
+      }
+    ],
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
+        "components": ["Label"],
+        "required": {
+          "every": ["id"]
+        },
+        "allowChildren": false
+      }
+    ]
+  },
+  "env": {
+    "browser": true,
+    "node": true
   }
 }

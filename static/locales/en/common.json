@@ -1,1 +1,34 @@
-{}
+{
+  "ServerError": "Bug in our System... Sorry :/",
+  "UserRedirected": "You will be redirected in 3s ...",
+  "defaultNameTodo": "My Todo",
+  "Index": {
+    "titleHtml": "Welcome to Totask - Create your free todo !",
+    "title": "Welcome to Totask !",
+    "description": "The best todo web app for free.",
+    "createTodo": "Create a todo"
+  },
+  "Actions": {
+    "addTask": "Add a Task",
+    "editTask": "Edit Task",
+    "editTodo": "Edit Todo",
+    "deleteTodo": "Delete Todo",
+    "deleteTodoConfirmation": "Are you sure you want to delete this todo ?"
+  },
+  "Task": {
+    "Select": {
+      "noPriority": "No Priority",
+      "lowPriority": "Low Priority",
+      "middlePriority": "Middle Priority",
+      "highPriority": "High Priority"
+    },
+    "created": "Created at"
+  },
+  "Input": {
+    "title": "Title",
+    "message": "Message",
+    "markdownHelp": "Need help in Markdown ?",
+    "yesHelp": "Yes, I need Help !",
+    "send": "Send"
+  }
+}

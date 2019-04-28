@@ -1,18 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Router, withNamespaces, i18n } from "../../i18n";
+import { withNamespaces, i18n } from "../../i18n";
 
 const Footer = props => {
   const { t } = props;
   return (
     <div className="has-text-centered">
       <p>
-        <span>{t("credits")}</span>
-        &nbsp;Quentin Laffont
+        <span>{`${t("credits")} `}</span>
+        Quentin Laffont
       </p>
       <div className="languages">
-        {i18n.options.allLanguages.map((language, i) => {
+        {i18n.options.allLanguages.map(language => {
           return (
             <button
               className={`button btn-sm ${
