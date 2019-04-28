@@ -2,12 +2,12 @@
   "name": "todo-app-react",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "dev": "npx next",
     "assets-build": "cd assets && compass compile && cd ..",
     "build": "npx next build",
-    "start": "node index.js",
+    "start": "node server.js",
     "lint": "npx eslint --ext .jsx ."
   },
   "keywords": [],
