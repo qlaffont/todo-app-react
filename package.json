@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "npx next",
-    "build": "npx next build",
+    "assets-build": "cd assets && compass compile && cd ..",
+    "build": "npm run assets-build && npx next build",
     "start": "node index.js",
     "lint": "npx eslint --ext .jsx ."
   },
