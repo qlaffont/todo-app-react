@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "npx next",
     "build": "npx next build",
-    "start": "npx next start -p $PORT",
-    "export": "npx next export",
+    "start": "node index.js",
     "lint": "npx eslint --ext .jsx ."
   },
   "keywords": [],
