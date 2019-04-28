@@ -13,10 +13,11 @@ import {
   ModalCardFooter,
   Delete
 } from "bloomer";
+import Link from "next/link";
 
 import TodoService from "../services/todoService";
 import TaskService from "../services/taskService";
-import { withNamespaces, Router } from "../i18n";
+import { Router, withNamespaces } from "../i18n";
 
 import Footer from "../components/Layout/Footer";
 import TaskForm from "../components/Tasks/taskForm";
@@ -34,8 +35,20 @@ const taskService = new TaskService();
 const Todos = ({ todo, tasks, t }) => {
   // eslint-disable-next-line react/destructuring-assignment
   if (todo.id === "" || !todo.id) {
-    Router.push("/");
-    return false;
+    return (
+      <div>
+        <Head>
+          <title>{`${t("Todo.notFound.title")} - Totask`}</title>
+        </Head>
+        <div className="centerall">
+          <div className="error has-text-centered">
+            <h1 className="title is-3">{t("Todo.notFound.title")}</h1>
+            <p>{t("Todo.notFound.description")}</p>
+            <Link href="/">{t("Todo.notFound.backHome")}</Link>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   // Use React Hooks
@@ -225,7 +238,6 @@ Todos.getInitialProps = async context => {
     });
   } catch (e) {
     if (!res) {
-      Router.push("/");
       res = {};
       res.data = {};
     }

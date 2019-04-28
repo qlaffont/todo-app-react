@@ -26,6 +26,13 @@
     },
     "created": "Créé à"
   },
+  "Todo": {
+    "notFound": {
+      "title": "Todo non existante",
+      "description": "Ce todo n'existe pas.",
+      "backHome": "Retourner à l'accueil"
+    }
+  },
   "Input": {
     "title": "Titre",
     "message": "Message",

@@ -26,6 +26,13 @@
     },
     "created": "Created at"
   },
+  "Todo": {
+    "notFound": {
+      "title": "Todo not found",
+      "description": "This todo is not found.",
+      "backHome": "Go to Home"
+    }
+  },
   "Input": {
     "title": "Title",
     "message": "Message",
