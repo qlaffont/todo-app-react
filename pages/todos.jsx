@@ -187,10 +187,10 @@ const Todos = ({ todo, tasks, t }) => {
           <ModalCardBody>{t("Actions.deleteTodoConfirmation")}</ModalCardBody>
           <ModalCardFooter>
             <button className="button is-danger" type="button" onClick={() => deleteTodo()}>
-              Yes
+              {t("Actions.Yes")}
             </button>
             <button className="button" type="button" onClick={() => setModalDelete(false)}>
-              No
+              {t("Actions.No")}
             </button>
           </ModalCardFooter>
         </ModalCard>

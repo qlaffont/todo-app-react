@@ -13,7 +13,9 @@
     "editTask": "Edit Task",
     "editTodo": "Edit Todo",
     "deleteTodo": "Delete Todo",
-    "deleteTodoConfirmation": "Are you sure you want to delete this todo ?"
+    "deleteTodoConfirmation": "Are you sure you want to delete this todo ?",
+    "Yes": "Yes",
+    "No": "No"
   },
   "Task": {
     "Select": {
