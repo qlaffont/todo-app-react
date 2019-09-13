@@ -1,0 +1,22 @@
+# docker-compose.yml
+version: "3.5"
+
+services:
+  node:
+    container_name: node_react
+    image: node:10.16.3-alpine
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - PORT=4000
+      - BASE=http://node_api:3000
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./:/home/node/app
+    command: "npm run start"
+    restart: on-failure
+networks:
+  default:
+    external:
+      name: kata-network
