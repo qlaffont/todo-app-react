@@ -6,7 +6,7 @@ import { useAlert } from "react-alert";
 import TodoService from "../services/todoService";
 import Layout from "../components/Layout/Layout";
 
-import { Router, withNamespaces } from "../i18n";
+import { Router, withTranslation } from "../i18n";
 
 const todoService = new TodoService();
 
@@ -59,4 +59,4 @@ Index.propTypes = {
   t: PropTypes.func.isRequired
 };
 
-export default withNamespaces("common")(Index);
+export default withTranslation("common")(Index);

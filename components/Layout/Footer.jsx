@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { withNamespaces, i18n } from "../../i18n";
+import { withTranslation, i18n } from "../../i18n";
 
 const Footer = props => {
   const { t } = props;
+
   return (
     <div className="has-text-centered">
       <p>
@@ -15,9 +16,7 @@ const Footer = props => {
         {i18n.options.allLanguages.map(language => {
           return (
             <button
-              className={`button btn-sm ${
-                i18n.language && language === i18n.language ? "is-info" : ""
-              }`}
+              className={`button btn-sm ${language === props.i18n.language ? "is-info" : ""}`}
               onClick={() => i18n.changeLanguage(language)}
               key={language}
               type="button"
@@ -32,13 +31,17 @@ const Footer = props => {
 };
 
 Footer.propTypes = {
-  t: PropTypes.func.isRequired
+  t: PropTypes.func.isRequired,
+  i18n: PropTypes.shape({
+    language: PropTypes.string
+  }).isRequired
 };
 
-Footer.getInitialProps = () => {
+Footer.getInitialProps = async ({ req }) => {
   return {
-    namespacesRequired: ["footer"]
+    namespacesRequired: ["footer"],
+    selectedLanguage: req ? req.language : i18n.language
   };
 };
 
-export default withNamespaces("footer")(Footer);
+export default withTranslation("footer")(Footer);

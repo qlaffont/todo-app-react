@@ -4,6 +4,8 @@
   "rules": {
     "prettier/prettier": ["error"],
     "react/jsx-uses-vars": "error",
+    "jsx-a11y/control-has-associated-label": 0,
+    "react/jsx-props-no-spreading": 0,
     "jsx-a11y/label-has-for": [
       2,
       {
@@ -28,5 +30,6 @@
   "env": {
     "browser": true,
     "node": true
-  }
+  },
+  "parser": "babel-eslint"
 }

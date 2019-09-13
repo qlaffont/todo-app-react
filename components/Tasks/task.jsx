@@ -11,7 +11,7 @@ import {
   Delete
 } from "bloomer";
 import PropTypes from "prop-types";
-import { withNamespaces } from "../../i18n";
+import { withTranslation } from "../../i18n";
 
 import TaskForm from "./taskForm";
 
@@ -129,6 +129,7 @@ const Task = ({ data, t, onEdit, onDelete }) => {
 Task.propTypes = {
   t: PropTypes.func.isRequired,
   data: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     priority: PropTypes.number.isRequired,
     completed: PropTypes.bool.isRequired,
@@ -145,4 +146,4 @@ Task.getInitialProps = () => {
   };
 };
 
-export default withNamespaces("common")(Task);
+export default withTranslation("common")(Task);

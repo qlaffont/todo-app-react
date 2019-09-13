@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { withNamespaces } from "../../i18n";
+import { withTranslation } from "../../i18n";
 
 const TaskForm = ({ data, t, onSubmit }) => {
   let defaultTitle = "";
@@ -107,4 +107,4 @@ TaskForm.getInitialProps = () => {
   };
 };
 
-export default withNamespaces("common")(TaskForm);
+export default withTranslation("common")(TaskForm);

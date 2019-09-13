@@ -17,7 +17,7 @@ import Link from "next/link";
 
 import TodoService from "../services/todoService";
 import TaskService from "../services/taskService";
-import { Router, withNamespaces } from "../i18n";
+import { Router, withTranslation } from "../i18n";
 
 import Footer from "../components/Layout/Footer";
 import TaskForm from "../components/Tasks/taskForm";
@@ -264,4 +264,4 @@ Todos.propTypes = {
   )
 };
 
-export default withNamespaces("common")(Todos);
+export default withTranslation("common")(Todos);

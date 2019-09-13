@@ -1,54 +1,33 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-nested-ternary */
 import React from "react";
-import PropTypes from "prop-types";
 import Head from "next/head";
-
-import { withNamespaces } from "../i18n";
 
 import "../assets/css/main.css";
 
 class Error extends React.Component {
-  static getInitialProps({ res, err }) {
-    let statusCode = null;
-    if (res) {
-      ({ statusCode } = res);
-    } else if (err) {
-      ({ statusCode } = err);
-    }
-    return {
-      namespacesRequired: ["common"],
-      statusCode
-    };
+  static async getInitialProps({ res, err }) {
+    const statusCode = res ? res.statusCode : err ? err.statusCode : null;
+    return { statusCode, namespacesRequired: ["common"] };
   }
 
   render() {
     const { statusCode } = this.props;
     return (
-      <div>
+      <div className="centerall">
         <Head>
           <title>
             Error&nbsp;
             {`${statusCode} - Totask` || "No Code - Totask"}
           </title>
         </Head>
-        <div className="centerall">
-          <div className="error has-text-centered">
-            <h1 className="title is-3">
-              Error&nbsp;
-              {statusCode || "No Code"}
-            </h1>
-          </div>
-        </div>
+        <h1 className="error has-text-centered title is-3">
+          Error&nbsp;
+          {statusCode || "No Code"}
+        </h1>
       </div>
     );
   }
 }
 
-Error.defaultProps = {
-  statusCode: null
-};
-
-Error.propTypes = {
-  statusCode: PropTypes.number
-};
-
-export default withNamespaces("common")(Error);
+export default Error;

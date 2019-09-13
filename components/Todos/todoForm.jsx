@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { withNamespaces } from "../../i18n";
+import { withTranslation } from "../../i18n";
 
 const TodoForm = ({ data, t, onSubmit }) => {
   let defaultTitle = "";
@@ -74,4 +74,4 @@ TodoForm.getInitialProps = () => {
   };
 };
 
-export default withNamespaces("common")(TodoForm);
+export default withTranslation("common")(TodoForm);
